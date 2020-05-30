@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// This is the file for App Component. App Component is the main component in React which acts as a container for all other components.
+
 function App() {
   return (
     <div className="App">
