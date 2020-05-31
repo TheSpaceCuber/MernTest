@@ -13,7 +13,7 @@ const app = express(); // initialize express??
 
 app.use(bodyParser.json());
 app.use(cors());
-require('./database'); // ???? do i even need this
+// require('./database'); // ???? do i even need this
 
 // ===================MONGODB ACCESS========================
 const mongoose = require('mongoose'); 
@@ -28,17 +28,22 @@ mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, u
 // ===================API========================
 // API is some kind of features. In this case, we're creating
 // some kind of user feature.
-const users = require('/api/users');
-app.use('/api/users', users);
+// const users = require('/api/users');
+// app.use('/api/users', users);
 // ===================API========================
 
 // Needed for deployment, links to the build folder in frontend
 // express.static delivers static files which are the ones built 
 // when npm run build is run on a React project
-app.use(express.static(path.join(__dirname, '../build')))
+app.use(express.static(path.join(__dirname, '../client/build')))
+/*
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../build'))
 })
+*/
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
+});
 
 // app.get('/', (req, res) => res.send('Hello world!')); // http://localhost:4000/ will show the text here.
 
