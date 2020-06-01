@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0000FF;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,17 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  /* The image used */
+  background-image: url("yalenus.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-link {

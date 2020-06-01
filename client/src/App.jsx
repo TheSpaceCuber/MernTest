@@ -7,17 +7,16 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <h1>OneNUS</h1>
+          <h2>All the NUS events that you'll need. Coming Soon.</h2>
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
           <a
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Designed and built using React
           </a>
         </header>
       </div>
