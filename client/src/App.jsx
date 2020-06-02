@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import { nushappenings } from "./components/NUShappenings";
+import { Food } from "./components/Food";
+import { Profile } from "./components/MyProfile";
+import { Home } from "./components/Home";
+import { Layout } from "./components/Layout";
 import './App.css';
+import { NavigationBar } from './components/NavigationBar';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>OneNUS</h1>
-          <h2>All the NUS events that you'll need. Coming Soon.</h2>
-          <img src={logo} className="App-logo" alt="logo" />
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Designed and built using React
-          </a>
-        </header>
-      </div>
-    );
-  }
+        <div>
+        <NavigationBar>
+        </NavigationBar>
+            <Router>
+                <Route exact path = "/" component = {Home} />
+                <Route path = "/nushappenings" component = {nushappenings} />
+                <Route path = "/food" component = {Food} />
+                <Route path = "/profile" component = {Profile} />
+            </Router>
+            </div>
+        );
+    }
 }
 
 export default App;
