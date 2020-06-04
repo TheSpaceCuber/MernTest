@@ -5,7 +5,6 @@ import { nushappenings } from "./components/NUShappenings";
 import { Food } from "./components/Food";
 import { Profile } from "./components/MyProfile";
 import { Home } from "./components/Home";
-import { Layout } from "./components/Layout";
 import './App.css';
 import { NavigationBar } from './components/NavigationBar';
 
@@ -13,15 +12,14 @@ class App extends Component {
   render() {
     return (
         <div>
-        <NavigationBar>
-        </NavigationBar>
+        <NavigationBar/>
             <Router>
                 <Route exact path = "/" component = {Home} />
                 <Route path = "/nushappenings" component = {nushappenings} />
                 <Route path = "/food" component = {Food} />
                 <Route path = "/profile" component = {Profile} />
             </Router>
-            </div>
+        </div>
         );
     }
 }

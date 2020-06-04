@@ -1,31 +1,28 @@
 import React from "react";
-import {Nav, Navbar} from "react-bootstrap";
-import styled from "styled-components";
-
-const Styles = styled.div`
-.navbar {
-    background-color: grey;
-}
-
-.navbar-brand, navbar-nav .nav-link {
-    color: black;
-
-}
-`;
+import "./NavigationBar.css"
+import logo from "./OneNUS-logo.png";
 
 export const NavigationBar = () => (
-    <Styles>
-        <Navbar expand='lg'>
-            <Navbar.Brand href="/"> OneNUS </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className = 'ml-auto'>
-                    <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/nushappenings">NUShappenings</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/profile">Profile</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/food">Food</Nav.Link></Nav.Item>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    </Styles>
+    <header className="navbar">
+        <nav className="navbar-nav">
+
+            <div className="navbar-nav-logo"> 
+            <a href="/"> 
+            <img src={logo} width="70" height="70"></img>  ONENUS
+            </a>
+            </div>
+
+            <div className="spacer"/>
+
+            <div className = 'navbar-nav-items'>
+                <ul>
+                    <li><a href="/nushappenings">NUShappenings</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/food">Food</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 )
+
+export default NavigationBar;

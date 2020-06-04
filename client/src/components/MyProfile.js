@@ -1,8 +1,10 @@
 import React from 'react';
-import { Layout } from './Layout';
 
 export const Profile = () => (
-    <div>
-         <p> Welcome to Profile Component!</p>
+    <div className="App">
+        <header className="App-header">
+        <h1>OneNUS</h1>
+        <h2>Welcome to the Profile component. Coming Soon.</h2>
+        </header>
     </div>
 )
