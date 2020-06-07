@@ -1,27 +1,18 @@
-const express = require('express');
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-const User = require('../models/User');
+// used to hash passwords before storing them
+const bcrypt = require("bcryptjs");
 
-router.get('/', (req, res) => {
-    User.find()
-        .then(users => res.json(users))
-        .catch(err => console.log(err))
-})
+// used for authorization
+const jwt = require("jsonwebtoken");
+const keys = require("../../config/keys");
 
-router.post('/', (req, res) => {
-    const { name, email } = req.body;
-    const newUser = new User({
-        name: name, email: email
-    })
-    newUser.save()
-        .then(() => res.json({
-            message: "Created account successfully"
-        }))
-        .catch(err => res.status(400).json({
-            "error": err,
-            "message": "Error creating account"
-        }))
-})
-module.exports = router 
+// Load input validation
+const validateRegisterInput = require("../../validation/register");
+const validateLoginInput = require("../../validation/login");
+// Load User model
+
+const User = require("../../models/User");
+ 
 

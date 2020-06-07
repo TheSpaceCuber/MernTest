@@ -1,15 +1,17 @@
-// Fast and lightweight web framework for Node.js
+// Fast and lightweight web framework for Node.js.
 const express = require('express'); 
 
-// Node.js body parsing middleware
+// Node.js body parsing middleware.
 const bodyParser = require('body-parser');
 
 // Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page
 // to be requested from another domain outside the domain from which the first resource was served.
 const cors = require('cors'); 
 
-const path = require('path'); // needed for deployment/production
-const app = express(); // initialize express??
+// The path module provides utilities for working with file and directory paths.
+const path = require('path'); 
+
+const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -17,7 +19,7 @@ app.use(cors());
 
 // ===================MONGODB ACCESS========================
 const mongoose = require('mongoose'); 
-// Atlas credentials
+// Atlas url with credentials
 const connection = "mongodb+srv://User0:Y9juVI7j5pq1spW9@cluster0-asita.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
     .then(() => console.log("Database Connected Successfully"))
@@ -32,9 +34,11 @@ mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, u
 // app.use('/api/users', users);
 // ===================API========================
 
-// Needed for deployment, links to the build folder in frontend
-// express.static delivers static files which are the ones built 
-// when npm run build is run on a React project
+/*
+ * Needed for deployment, links to the build folder in frontend
+ * express.static delivers static files which are the ones built 
+ * when npm run build is run on a React project
+ */
 app.use(express.static(path.join(__dirname, '../client/build')))
 /*
 app.get('*', (req, res) => {
@@ -47,9 +51,14 @@ app.get('*', (req, res) => {
 
 // app.get('/', (req, res) => res.send('Hello world!')); // http://localhost:4000/ will show the text here.
 
-// --------------------------------------------------------------------
-const port = process.env.PORT || 5000; // Decides which port the server is running on
+/*  
+ * When hosting your application on another service (like Heroku, Nodejitsu, and AWS), 
+ * your host may independently configure the process.env.PORT variable for you;
+ * hence this code sets the port to whatever is in the environment variable PORT, or 3000 if there's nothing there 
+ */
+const port = process.env.PORT || 5000; 
 
+// creates the Node.js web server at the specified host and port
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 });
