@@ -54,3 +54,12 @@ We are the first web application on the university campus and in the university 
 
 ## Program Flow
 ![program_flow](https://user-images.githubusercontent.com/43946966/84005584-ed0a7080-a99f-11ea-869b-efbc2da09437.jpg)
+
+## Tech Stack
+1. Front-end (ReactJS): One of the most popular front-end libraries. We wanted to learn more about the strengths of ReactJS through its focus on individual components and understand why it is taking over front-end development.
+
+2. Back-end (NodeJS): Both ReactJS and NodeJS makes use of JavaScript, which is great as we do not have to focus on multiple languages. It's beginner friendly and supports a wide variety of modules as well.
+
+3. Database (MongoDB Atlas): Atlas makes the NoSQL database convenient and we wanted to learn how NoSQL works compared to relational databases. The popularity of MongoDB makes it a great choice.
+
+4. Webscrape: In order to obtain our data, we use Python due to its ease it web scraping.
