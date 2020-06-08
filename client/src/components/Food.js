@@ -1,10 +1,9 @@
 import React from 'react';
 
 export const Food = () => (
-    <div className="App">
-        <header className="App-header">
-        <h1>OneNUS</h1>
-        <h2>Welcome to the Food Component. Coming Soon.</h2>
-        </header>
+    <div>
+        <main style={{marginTop: "80px", marginLeft: "35px", marginRight: "35px"}}>
+            <p>Welcome to the Food component.</p>
+        </main>
     </div>
 )

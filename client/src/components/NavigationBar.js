@@ -1,24 +1,24 @@
 import React from "react";
 import "./NavigationBar.css"
-import logo from "./OneNUS-logo.png";
+import logo from "..//Images/OneNUS-logo.png";
 
 export const NavigationBar = () => (
     <header className="navbar">
         <nav className="navbar-nav">
 
-            <div className="navbar-nav-logo"> 
-            <a href="/"> 
-            <img src={logo} width="70" height="70"></img>  ONENUS
+            <a className="navbar-nav-logo" href="/"> 
+            <img src={logo} width="40" height="40"></img>
             </a>
-            </div>
+
+            <a className="navbar-nav-logotext" href="/">OneNUS</a>
 
             <div className="spacer"/>
 
             <div className = 'navbar-nav-items'>
                 <ul>
-                    <li><a href="/nushappenings">NUShappenings</a></li>
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/food">Food</a></li>
+                    <li><a href="/nushappenings">HAPPENINGS</a></li>
+                    <li><a href="/food">FOOD</a></li>
+                    <li><a href="/profile">MY PROFILE</a></li>
                 </ul>
             </div>
         </nav>

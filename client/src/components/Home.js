@@ -1,11 +1,10 @@
 import React from 'react';
-
+import "./Home.css";
+import banner from "../Images/yalenus.jpg";
 
 export const Home = () => (
-    <div className="App">
-        <header className="App-header">
-        <h1>OneNUS</h1>
-        <h2>Hassle-free NUS news at your fingertips. Coming Soon.</h2>
-        </header>
+    <div className="home-banner">
+        <img src={banner}/>
+        <p>OneNUS</p>
     </div>
 )

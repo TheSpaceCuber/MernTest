@@ -1,0 +1,15 @@
+.home-banner img {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.home-banner p {
+    position: absolute;
+    top: 220px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-family: "Basement-Medium";
+    font-size: 100px;
+}
