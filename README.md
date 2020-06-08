@@ -42,8 +42,8 @@ Currently, we will focus on a single platform, Telegram, first.
          - Search bar feature [To be updated]
       - Display the data obtained in a user-friendly way. [To be updated with screenshot]
 3.	Evaluation Milestone 3 – Extension
-Incorporate the storage and display of media files (images and videos) into database and web application [To be updated]
-Extension of features in the web application to cover more categories (NUSync, NUSNextBus) [To be updated]
+      - Incorporate the storage and display of media files (images and videos) into database and web application [To be updated]
+      - Extension of features in the web application to cover more categories (NUSync, NUSNextBus) [To be updated]
  
 4.	Splashdown
 
