@@ -1,5 +1,5 @@
 # [OneNUS](http://ec2-100-25-45-142.compute-1.amazonaws.com/)
-  - Orbital 2020
+  - [Orbital 2020](https://orbital.comp.nus.edu.sg/)
   - Platform for all the NUS events you need.
   - Tien Chun & Royce
 
