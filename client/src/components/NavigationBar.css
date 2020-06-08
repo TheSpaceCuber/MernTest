@@ -3,60 +3,62 @@
     top:0;
     left:0;
     width: 100%;
-    background: #808080;
-    height: 82px;
+    background: #7395AE;
+    height: 65px;
 }
 
 .navbar-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 1rem;
 }
 
 .navbar-nav-logo {
-    margin: 5px;
-    align-items: center;
+    padding-top: 2.5px;
+    padding-left: 30px;
 }
-
-.navbar-nav-logo img{
-    padding: 0 5px;
-}
-.navbar-nav-logo a {
+    
+.navbar-nav-logotext {
+    position: fixed;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 40px;
-    align-items: center;
-    display: flex;
-    margin-top: 1.5px;
+    font-family: "Basement-Medium";
+    font-size: 30px;
+    left: 46%;
+    padding-top: 5px;
 }
 
-.navbar-nav-logo a:hover,
-.navbar-nav-logo a:active {
+.navbar-nav-logotext a:hover,
+.navbar-nav-logotext a:active {
     color: orange;
-
 }
 
 .spacer {
     flex: 1;
 }
+
 .navbar-nav-items ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    padding-right: 30px;
+    margin: 0px;
     display: flex;
 }
+
 .navbar-nav-items li {
-    padding: 0 0.5rem;
+    height: 65px;
+    width: 100px;
+    line-height: 65px;
+    text-align: center;
 }
+
 .navbar-nav-items a {
     color: white;
     text-decoration: none;
+    font-family: "Apercu Pro Light";
 }
 
-.navbar-nav-items a:hover,
-.navbar-nav-items a:active {
-    color: orange;
-
+.navbar-nav-items li:hover,
+.navbar-nav-items li:active {
+    background-color: #557A95;
 }

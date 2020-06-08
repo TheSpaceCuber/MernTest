@@ -1,10 +1,9 @@
 import React from 'react';
 
 export const Profile = () => (
-    <div className="App">
-        <header className="App-header">
-        <h1>OneNUS</h1>
-        <h2>Welcome to the Profile component. Coming Soon.</h2>
-        </header>
+    <div className="MyProfile">
+        <main style={{marginTop: "80px", marginLeft: "35px", marginRight: "35px"}}>
+            <p>Welcome to the My Profile component.</p>
+        </main>
     </div>
 )
