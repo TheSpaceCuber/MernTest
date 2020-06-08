@@ -1,7 +1,7 @@
 # [OneNUS](http://ec2-100-25-45-142.compute-1.amazonaws.com/)
   - [Orbital 2020](https://orbital.comp.nus.edu.sg/)
   - Platform for all the NUS events you need.
-  - Tien Chun & Royce
+  - [Tien Chun](https://github.com/tien87chun) & [Royce](https://github.com/TheSpaceCuber)
 
 ## Motivation
 As a NUS student, do you often find that there are too many decentralised information channels? We certainly think so. Because different NUS organisations use various decentralised communication channels – such as email lists, NUSync, Telegram channels, and NUS TalentConnect – we often find it difficult to find the information we are interested in. At the same time, that also suggests that publicity efforts by such organisations are not reaching their target audience effectively.
