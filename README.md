@@ -49,4 +49,5 @@ Extension of features in the web application to cover more categories (NUSync, N
 ## How are we different from similar platforms?
 We are the first web application on the university campus and in the university communications channel ecosystem to congregate and consolidate information over various communication channels into a one-stop platform for the latest news and happenings in NUS.
 
+## Program Flow
 ![program_flow](https://user-images.githubusercontent.com/43946966/84005584-ed0a7080-a99f-11ea-869b-efbc2da09437.jpg)
