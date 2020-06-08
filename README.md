@@ -8,6 +8,9 @@ As a NUS student, do you often find that there are too many decentralised inform
 
 Imagine a centralised platform – just like a massive school-wide Telegram channel – which is able to sieve out all these publicity efforts and across various platforms. The next time I know about a career fair, a food outlet discount, or even co-curricular clubs sign-ups, it would not be through word-of-mouth anymore! I most likely would have already seen it on OneNUS.
 
+## Poster
+![Poster](https://user-images.githubusercontent.com/43946966/84006257-03fd9280-a9a1-11ea-9ac3-4eedfa32200f.jpg)
+
 ## Aim
 We want to create a web application that provides a clean interface for students to view and discover meaningful events happening in NUS.
 
