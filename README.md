@@ -62,4 +62,4 @@ We are the first web application on the university campus and in the university 
 
 3. Database (MongoDB Atlas): Atlas makes the NoSQL database convenient and we wanted to learn how NoSQL works compared to relational databases. The popularity of MongoDB makes it a great choice.
 
-4. Webscrape: In order to obtain our data, we use Python due to its ease it web scraping.
+4. Webscrape: In order to obtain our data, we use Python due to its ease in web scraping.
