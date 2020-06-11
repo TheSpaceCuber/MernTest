@@ -11,17 +11,28 @@ const cors = require('cors');
 // The path module provides utilities for working with file and directory paths.
 const path = require('path'); 
 
+const passport = require("passport");
+const users = require("./routes/api/users");
+
 const app = express();
 
+// Bodyparser middleware
+app.use(
+    bodyParser.urlencoded({
+      extended: false
+    })
+  );
+  
 app.use(bodyParser.json());
 app.use(cors());
 // require('./database'); // ???? do i even need this
 
 // ===================MONGODB ACCESS========================
 const mongoose = require('mongoose'); 
-// Atlas url with credentials
-const connection = "mongodb+srv://User0:Y9juVI7j5pq1spW9@cluster0-asita.mongodb.net/test?retryWrites=true&w=majority";
-mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+// DB Config
+const db = require("./config/keys").mongoURI;
+
+mongoose.connect(db,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
     .then(() => console.log("Database Connected Successfully"))
     .catch(err => console.log(err));
 // ===================MONGODB ACCESS========================
@@ -32,6 +43,13 @@ mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, u
 // some kind of user feature.
 // const users = require('/api/users');
 // app.use('/api/users', users);
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
+// Routes
+app.use("/api/users", users);
+
 // ===================API========================
 
 /*
