@@ -13,7 +13,7 @@ class App extends Component {
     return (
         <div className="App">
         <NavigationBar/>
-        <main style={{marginTop: '65px'}}/>
+        <div style={{marginTop:'65px'}}></div>
             <Router>
                 <Route exact path = "/" component = {Home} />
                 <Route path = "/nushappenings" component = {nushappenings} />
