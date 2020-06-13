@@ -16,13 +16,16 @@ class App extends Component {
     render() {
       return (
           <div className="App">
+              <Router>
           <Navbar/>
           <div style={{marginTop:'65px'}}></div>
-              <Router>
+              
                   <Route exact path = "/" component = {Home} />
                   <Route path = "/nushappenings" component = {nushappenings} />
                   <Route path = "/food" component = {Food} />
                   <Route path = "/profile" component = {Profile} />
+                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/login" component={Login} />
               </Router>
               
           </div>
