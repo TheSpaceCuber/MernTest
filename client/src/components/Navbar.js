@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar.css"
+import "./Navbar.css";
 import logo from "..//Images/OneNUS-logo.png";
 
 export const Navbar = () => (
