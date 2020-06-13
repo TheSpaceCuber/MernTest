@@ -1,12 +1,12 @@
 import React from "react";
-import "./NavigationBar.css"
+import "./Navbar.css"
 import logo from "..//Images/OneNUS-logo.png";
 
-export const NavigationBar = () => (
+export const Navbar = () => (
     <header className="navbar">
         <nav className="navbar-nav">
 
-            <a className="navbar-nav-logo" href="/"> 
+            <a className="navbar-nav-logo" href="/">
             <img src={logo} width="40" height="40"></img>
             </a>
 
@@ -22,7 +22,7 @@ export const NavigationBar = () => (
                 </ul>
             </div>
         </nav>
-    </header>
+    </header >
 )
 
-export default NavigationBar;
+export default Navbar;
