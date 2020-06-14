@@ -1,0 +1,31 @@
+:root {
+    --primary: grey;
+    --warning: #ffd02;
+    --danger: #eb3f27;
+    --success: #75fa83;
+    --white: white;
+    --dark: black;
+}
+
+.btn {
+    font-family: "Apercu Pro";
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+}
+
+.btn--primary--solid {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+.btn--medium {
+    padding: 5px 10px;
+    font-size: 16px;
+}

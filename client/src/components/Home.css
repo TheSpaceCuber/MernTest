@@ -2,11 +2,12 @@
     width: 100%;
     display: block;
     position: relative;
+    filter: brightness(125%);
 }
 
 .home-banner h1 {
     position: absolute;
-    top: 250px;
+    top: 210px;
     color: white;
     width: 100%;
     text-align: center;

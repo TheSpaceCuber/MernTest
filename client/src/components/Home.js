@@ -13,7 +13,6 @@ export const Home = () => (
             <img src={banner}/>
             <h1>OneNUS</h1>
             <p>Hassle-free updates, at your fingertips.</p>
-            <Button>GitHub</Button>
         </div>
 
         <div className="home-who-are-we">

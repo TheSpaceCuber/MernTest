@@ -29,7 +29,7 @@
     font-weight: bold;
     font-family: "Basement-Medium";
     font-size: 30px;
-    left: 42.5%;
+    left: 42%;
     padding-top: 5px;
     transition: 0.6s;
 }
@@ -40,7 +40,7 @@
 
 .navbar-nav-items ul {
     list-style: none;
-    padding-right: 30px;
+    padding-right: 15px;
     margin: 0px;
     display: flex;
     position: relative;
@@ -48,20 +48,21 @@
 
 .navbar-nav-items li {
     height: 65px;
-    width: 100px;
+    padding: 0px 12.5px;
     line-height: 65px;
     text-align: center;
     position: relative;
     transition: 0.6s;
 }
 
+.navbar-nav-items-non-button:hover,
+.navbar-nav-items-non-button:active {
+    background-color: #557A95;
+}
+
 .navbar-nav-items a {
     color: white;
     text-decoration: none;
-    font-family: "Apercu Pro Light";
-}
-
-.navbar-nav-items li:hover,
-.navbar-nav-items li:active {
-    background-color: #557A95;
+    font-family: "Apercu Pro";
+    font-size: 16px;
 }
