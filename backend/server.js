@@ -13,6 +13,7 @@ const path = require('path');
 
 const passport = require("passport");
 const users = require("./routes/api/users");
+const happenings = require("./routes/api/happenings");
 
 const app = express();
 
@@ -47,8 +48,10 @@ mongoose.connect(db,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAn
 app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
+
 // Routes
 app.use("/api/users", users);
+app.use("/happenings", happenings);
 
 // ===================API========================
 
@@ -80,4 +83,5 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 });
+
 

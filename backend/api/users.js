@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const app = express();
 
 // used to hash passwords before storing them
 const bcrypt = require("bcryptjs");
@@ -11,8 +12,10 @@ const keys = require("../../config/keys");
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
-// Load User model
 
+// Load User model
 const User = require("../../models/User");
+
+app.use("/users", router);
  
 
