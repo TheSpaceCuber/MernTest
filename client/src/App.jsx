@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { nushappenings } from "./components/NUShappenings.js";
+import nushappenings from "./components/NUShappenings.js";
 import { Food } from "./components/Food.js";
 import { Profile } from "./components/MyProfile.js";
 import { Home } from "./components/Home.js";
