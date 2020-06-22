@@ -13,7 +13,7 @@ const path = require('path');
 
 const passport = require("passport");
 const users = require("./routes/api/users");
-const happenings = require("./routes/api/happenings");
+const happeningsRoutes = require("./routes/api/happenings");
 
 const app = express();
 
@@ -51,7 +51,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
-app.use("/happenings", happenings);
+app.use("/happenings", happeningsRoutes);
 
 // ===================API========================
 

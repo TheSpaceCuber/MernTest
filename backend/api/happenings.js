@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const happenings = require("../models/happenings");
 const happeningsRoutes = require("../routes/api/happenings");
 
-app.use("/happenings", happeningsRoutes);
+// app.use("/happenings", happeningsRoutes);
 
 
 
