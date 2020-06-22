@@ -1,0 +1,25 @@
+.data {
+    margin-top: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.event{
+    margin: 25px 0;
+    padding: 0px 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #7395AE;
+}
+
+.event-message-content{
+    padding: 0
+}
+
+.event-message-link{
+    color: tomato;
+}
+
+.event-message-date{
+    padding: 0
+}

@@ -1,17 +1,17 @@
 import React from 'react';
 import axios from 'axios';
+import './NUShappenings.css';
+import {Button} from "./Button.js";
 
 class NUShappenings extends React.Component {
     state = {
-        channel_name: '', 
-        message_link: '',
-        message_date: '',
+        channel_name: 'Happenings', 
         posts: []
     };
     
     componentDidMount = () => {
         this.getData();
-    }
+    };
 
     getData = () => {
         axios.get('/happenings')
@@ -23,24 +23,30 @@ class NUShappenings extends React.Component {
             .catch(() => {
                 console.log('Error retrieving data into React.');
                 alert('Error retrieving data into React');
-            })
+            });
     }
 
     
     displayData = (happeningsArray) => {
         if (!happeningsArray.length) return null; // if no information in happenings
 
-        happeningsArray.map((event, index) => (
-            <div key={index}>
-                <h3>{event.channel_name}</h3>
+        return happeningsArray.map((event, index) => (
+            <div className='event' key={index}>
+                <p className='event-message-content'>{event.message_content}</p>
+                <a className='event-message-link' href={event.message_link}> {event.message_link} </a>
+                <p className='event-message-date'>{event.message_date}</p>
             </div>
-        ))
-    }
+        ));
+    };
 
     render() {
+        console.log('State: ', this.state);
+
         return (
-        <div>
-            <h3> Hello happenings</h3>
+
+        <div className='data'>
+            <h3>Welcome to {this.state.channel_name}</h3>
+            {this.displayData(this.state.posts)}
         </div>
         );
     }
