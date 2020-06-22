@@ -16,3 +16,4 @@ happeningsRoutes.route('/').get(function(req, res) {
 });
 
 module.exports = happeningsRoutes;
+  
