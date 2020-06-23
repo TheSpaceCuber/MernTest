@@ -1,8 +1,8 @@
 :root {
     --primary: grey;
-    --warning: #ffd02;
+    --moreinfo: #7395AE;
+    --warning: orange;
     --danger: #eb3f27;
-    --success: #75fa83;
     --white: white;
     --dark: black;
 }
@@ -15,14 +15,23 @@
     transition: transform 0.3s ease;
 }
 
-.btn:hover {
+.btn--primary--solid:hover {
     transform: translateY(-5px);
 }
 
 .btn--primary--solid {
     background-color: var(--primary);
-    color: white;
     border: none;
+}
+
+.btn--moreinfo--solid {
+    background-color: var(--moreinfo);
+    border: none;
+}
+
+.btn--moreinfo--solid:hover,
+.btn--moreinfo--solid:active {
+    background-color: #557A95;
 }
 
 .btn--medium {

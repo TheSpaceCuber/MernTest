@@ -12,12 +12,13 @@
     border-color: #7395AE;
 }
 
-.event-message-content{
-    padding: 0
+.event-message-link {
+    color: white;
+    text-decoration: none;
 }
 
-.event-message-link{
-    color: tomato;
+.event-message-content{
+    padding: 0
 }
 
 .event-message-date{

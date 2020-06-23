@@ -3,9 +3,9 @@ import './Button.css';
 
 const STYLES = [
     "btn--primary--solid",
+    "btn--moreinfo--solid",
     "btn--warning--solid",
     "btn--danger--solid",
-    "btn--success--solid",
     "btn--primary--outline",
     "btn--warning--outline",
     "btn--danger--outline",

@@ -1,11 +1,11 @@
-.home-banner img {
+.about-banner img {
     width: 100%;
     display: block;
     position: relative;
     filter: brightness(125%);
 }
 
-.home-banner h1 {
+.about-banner h1 {
     position: absolute;
     top: 210px;
     color: white;
@@ -15,7 +15,7 @@
     font-size: 125px;
 }
 
-.home-banner p {
+.about-banner p {
     position: absolute;
     top: 400px;
     color: white;
@@ -25,7 +25,7 @@
     font-size: 24px;
 }
  
-.home-who-are-we {
+.about-who-are-we {
     display: flex;
     padding: 40px 295px;
     align-items: centers;
@@ -33,14 +33,14 @@
     text-align: center;
 }
 
-.home-who-are-we img{
+.about-who-are-we img{
     margin-right: 160px;
     margin-top: 30px;
     height: 165px;
     width: 165px;
 }
 
-.home-motivation {
+.about-motivation {
     display: flex;
     padding: 40px 250px;
     align-items: center;
@@ -48,24 +48,24 @@
     text-align: center;
 }
 
-.home-motivation img {
+.about-motivation img {
     margin-right: 100px;
     margin-top: 50px;
     height: 250px;
     width: 250px;
 }
 
-.home-text h1 {
+.about-text h1 {
     font-size: 40px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
-.home-text p {
+.about-text p {
     font-size: 16px;
 }
 
-.home-user-stories {
+.about-user-stories {
     display: flex;
     padding: 40px 250px;
     align-items: center;
@@ -73,18 +73,18 @@
     text-align: center;
 }
 
-.home-user-stories img {
+.about-user-stories img {
     margin-right: 150px;
     margin-top: 50px;
     height: 200px;
     width: 200px;
 }
 
-.home-list {
+.about-list {
     text-align: left;
     list-style: number;
 }
 
-.home-list li {
+.about-list li {
     font-size: 16px;
 }
