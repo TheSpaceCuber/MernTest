@@ -6,6 +6,8 @@ import {Button} from "./Button.js";
 class NUShappenings extends React.Component {
     state = {
         channel_name: 'Happenings', 
+        start: 1,
+        count: 30,
         posts: []
     };
     
@@ -15,7 +17,7 @@ class NUShappenings extends React.Component {
 
     getData = () => {
         axios.get('/happenings')
-            .then((response) => {
+            .then(response => {
                 const data = response.data;
                 this.setState({posts: data});
                 console.log('Data retrieved into React.');

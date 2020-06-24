@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-var happenings = new Schema ({
+var happeningsSchema = new Schema ({
     channel_name: String,
     message_id: Number,
     message_link: String,
@@ -11,4 +11,5 @@ var happenings = new Schema ({
     message_year: Number
 });
 
-module.exports = mongoose.model('happenings', happenings);
+
+module.exports = mongoose.model('happenings', happeningsSchema);
