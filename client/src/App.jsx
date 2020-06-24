@@ -14,26 +14,25 @@ import Login from "./components/auth/Login";
 
 class App extends Component {
     render() {
-      return (
-          <div className="App">
-              <Router>
-          <Navbar/>
-          <div style={{marginTop:'65px'}}></div>
-              
-                  <Route exact path = "/about" component = {About} />
-                  <Route path = "/nushappenings" component = {nushappenings} />
-                  <Route path = "/food" component = {Food} />
-                  <Route path = "/profile" component = {Profile} />
-                  <Route exact path="/register" component={Register} />
-                  <Route exact path="/login" component={Login} />
-              </Router>
-              
-          </div>
-          );
-      }
-  }
-  
-  export default App;
+        return (
+            <div className="App">
+                <Router>
+                    <Navbar />
+                    <div style={{ marginTop: '65px' }}></div>
+                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/about" component={About} />
+                    <Route path="/nushappenings" component={nushappenings} />
+                    <Route path="/food" component={Food} />
+                    <Route path="/profile" component={Profile} />
+                    <Route exact path="/register" component={Register} />
+                    <Route exact path="/login" component={Login} />
+                </Router>
+            </div>
+        );
+    }
+}
+
+export default App;
 
 
 

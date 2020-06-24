@@ -9,12 +9,6 @@ import {Button} from './Button.js';
 export const About = () => (
     <header className="about-page">
 
-        <div className="about-banner">
-            <img src={banner}/>
-            <h1>OneNUS</h1>
-            <p>Hassle-free updates, at your fingertips.</p>
-        </div>
-
         <div className="about-who-are-we">
             <img src ={who_picture}/>
             <div className="about-text">
@@ -47,3 +41,11 @@ export const About = () => (
         </div>
     </header>
 )
+
+/*
+<div className="about-banner">
+            <img src={banner}/>
+            <h1>OneNUS</h1>
+            <p>Hassle-free updates, at your fingertips.</p>
+        </div>
+*/
