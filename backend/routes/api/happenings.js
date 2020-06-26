@@ -22,7 +22,7 @@ happeningsRoutes.route('/').get(function(req, res) {
                 page: page,
                 limit: limit,
                 total_pages: total_pages,
-                has_more: (page < total_pages)
+                hasMore: (page < total_pages)
             } 
             result.happenings = happenings.slice(startIndex, endIndex)
 

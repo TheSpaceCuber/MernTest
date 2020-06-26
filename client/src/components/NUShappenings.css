@@ -24,3 +24,12 @@
 .event-message-date{
     padding: 0
 }
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 50px;
+    padding-top: 25px
+}

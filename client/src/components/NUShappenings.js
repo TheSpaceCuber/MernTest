@@ -2,24 +2,48 @@ import React from 'react';
 import axios from 'axios';
 import './NUShappenings.css';
 import {Button} from "./Button.js";
+import { BeatLoader } from 'react-spinners';
 
-class NUShappenings extends React.Component {
+
+class nushappenings extends React.Component {
     state = {
-        channel_name: 'Happenings', 
-        start: 1,
-        count: 30,
-        posts: []
+        page: 1,
+        limit: 600,
+        posts: [],
+        scrolling: false,
+        totalPages: null,
+        loading: true,
+        hasMore: null
     };
     
     componentDidMount = () => {
         this.getData();
+        this.scrollListener = window.addEventListener('scroll', (event) => {
+            this.handleScroll(event)
+        })
+    };
+
+    handleScroll = (event) => {
+        const { scrolling, totalPages, page } = this.state
+        if (scrolling) return
+        if (totalPages <= page) return
+        const lastLi = document.querySelector('div.event > p:last-child')
+        const lastLiOffset = lastLi.offsetTop + lastLi.clientHeight
+        const pageOffset = window.pageYOffset + window.innerHeight 
+        var bottomOffset = 30
+        if (pageOffset > lastLiOffset - bottomOffset) this.loadMore()
     };
 
     getData = () => {
-        axios.get('/happenings')
+        axios.get(`/happenings/?page=${this.state.page}&limit=${this.state.limit}`)
             .then(response => {
                 const data = response.data;
-                this.setState({posts: data});
+                this.setState({
+                    posts: this.state.posts.concat(data.happenings),
+                    scrolling: false,
+                    totalPages: JSON.total_pages,
+                    loading: false
+                });
                 console.log('Data retrieved into React.');
             })
             .catch(() => {
@@ -43,47 +67,31 @@ class NUShappenings extends React.Component {
         ));
     };
 
+    loadMore = () => {
+        this.setState(prevState => ({
+            page: prevState.page + 1,
+            scrolling: true,
+            loading: true
+        }), this.getData())
+    }
+
     render() {
         console.log('State: ', this.state);
 
         return (
 
-        <div className='data'>
-            <h3>Welcome to {this.state.channel_name}</h3>
-            {this.displayData(this.state.posts)}
-        </div>
-        );
-    }
-}
-
-export default NUShappenings;
-
-
-
-
-
-/*
-export default class nushappenings extends React.Component {
-
-    state = {
-        loading: true
-    };
-
-    async componentDidMount() {
-        const url = 'https://localhost:5000/happenings';
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-    }
-
-
-    render() {
-        return (
         <div>
-            {this.state.loading ? <div>loading...</div> : <div>Error in loading...</div>}
+            <input type='text'></input>
+            <div className='data'>
+                {this.displayData(this.state.posts)}
+            </div>
+
+            <div className='loading-spinner'>
+                <BeatLoader size={24} color='#7395AE' loading/>
+            </div>
         </div>
         );
     }
 }
-    
-*/
+
+export default nushappenings;
