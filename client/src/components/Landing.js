@@ -5,14 +5,14 @@ import banner from "../Images/yalenus.jpg";
 class Landing extends Component {
   render() {
     return (
-      <div className="LandingClass" style={{backgroundImage: `url(${banner})`}}>
+      <div className="LandingClass" style={{backgroundImage: `url(${banner})`, height:"920px"}}>
       <div style={{ height: "75vh"}} className="container valign-wrapper">
         <div className="row">
-          <div className="OneNUS name" style={{color: "white"}}>
+          <div className="OneNUS name" style={{color: "white", textAlign:"center"}}>
             <h1>
               <b>OneNUS</b>
             </h1>
-            <p className="flow-text grey-text text-darken-1">
+            <p className="flow-text white-text text-darken-1">
               Hassle free updates, at your fingertips. 
             </p>
             <br />
@@ -43,6 +43,7 @@ class Landing extends Component {
               </Link>
             </div>
           </div>
+          
         </div>
       </div>
       </div>
