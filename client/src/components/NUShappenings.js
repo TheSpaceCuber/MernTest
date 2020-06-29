@@ -59,9 +59,7 @@ class nushappenings extends React.Component {
         return happeningsArray.map((event, index) => (
             <div className='event' key={index}>
                 <p className='event-message-content'>{event.message_content}</p>
-                <Button buttonStyle='btn--moreinfo--solid'>
-                    <a className='event-message-link' href={event.message_link} target="_blank">More Info</a>
-                </Button>
+                <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>More Info</a>
                 <p className='event-message-date'>{event.message_date}</p>
             </div>
         ));

@@ -25,9 +25,7 @@ export const Navbar = () => (
                 <ul className="navbar-nav-items-li-non-button">
 
                     <li>
-                    <Button className="btn--primary--solid">
-                    <a className="git-button-text" href="https://github.com/TheSpaceCuber/OneNUS" target="_blank">GitHub</a>
-                    </Button>
+                    <a className="git-button-text" href="https://github.com/TheSpaceCuber/OneNUS" target="_blank">GITHUB</a>
                     </li>
 
                     <li className="navbar-nav-items-non-button">
