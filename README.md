@@ -36,14 +36,16 @@ Currently, we will focus on a single platform, Telegram, first.
       - Familiarise ourselves with the required technologies  ✓
 
 2. Evaluation Milestone 2 – Prototyping
-      - Work on application UI using ReactJS (implement multiple features in the frontend) locally
+      - Work on application UI using ReactJS (implement multiple features in the frontend) locally ✓
       - Connecting the implementation of features to the backend database
-         - Sign-up & Login feature
-         - Search bar feature [To be updated]
-      - Display the data obtained in a user-friendly way. [To be updated with screenshot]
+         - Sign-up & Login feature [Delayed for Milestone 3]
+         - Search bar feature [Delayed for Milestone 3]
+      - Display the data obtained in a user-friendly way (Not fully completed). ✓
+      - ![Happenings](https://user-images.githubusercontent.com/43946966/86004019-3d2b9e80-ba45-11ea-9cbf-90f8be3af22f.gif)
+
 3.	Evaluation Milestone 3 – Extension
-      - Incorporate the storage and display of media files (images and videos) into database and web application [To be updated]
-      - Extension of features in the web application to cover more categories (NUSync, NUSNextBus) [To be updated]
+      - Incorporate the storage and display of media files (images and videos) into database and web application [To be confirmed]
+      - Extension of features in the web application to cover more categories (NUSync, NUSNextBus) [To be confirmed]
  
 4.	Splashdown
 
