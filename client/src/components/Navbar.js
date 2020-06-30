@@ -11,7 +11,7 @@ import {
 
 export const Navbar = () => (
     <header className="navbar">
-        <nav className="navbar-nav">
+        <nav className="blue navbar-nav">
 
             <Link className="navbar-nav-logo" to ="/">
             <img src={logo} width="40" height="40"></img>

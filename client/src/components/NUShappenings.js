@@ -8,12 +8,13 @@ import { BeatLoader } from 'react-spinners';
 class nushappenings extends React.Component {
     state = {
         page: 1,
-        limit: 600,
+        limit: 25,
         posts: [],
         scrolling: false,
         totalPages: null,
         loading: true,
-        hasMore: null
+        hasMore: true,
+        search: ''
     };
     
     componentDidMount = () => {
@@ -23,26 +24,37 @@ class nushappenings extends React.Component {
         })
     };
 
+    loadMore = () => {
+        if (this.state.hasMore) {
+        this.setState(prevState => ({
+            page: prevState.page + 1,
+            scrolling: true,
+            loading: true
+        }), this.getData())}
+    };
+
     handleScroll = (event) => {
-        const { scrolling, totalPages, page } = this.state
+        const { scrolling, totalPages, page, hasMore} = this.state
         if (scrolling) return
         if (totalPages <= page) return
         const lastLi = document.querySelector('div.event > p:last-child')
         const lastLiOffset = lastLi.offsetTop + lastLi.clientHeight
         const pageOffset = window.pageYOffset + window.innerHeight 
         var bottomOffset = 30
-        if (pageOffset > lastLiOffset - bottomOffset) this.loadMore()
+        if ((pageOffset > lastLiOffset - bottomOffset) && hasMore) this.loadMore()
     };
 
+
     getData = () => {
-        axios.get(`/happenings/?page=${this.state.page}&limit=${this.state.limit}`)
+        axios.get(`/happenings/?page=${this.state.page}&limit=${this.state.limit}/`)
             .then(response => {
                 const data = response.data;
                 this.setState({
                     posts: this.state.posts.concat(data.happenings),
                     scrolling: false,
                     totalPages: JSON.total_pages,
-                    loading: false
+                    loading: false,
+                    hasMore: data.hasMore
                 });
                 console.log('Data retrieved into React.');
             })
@@ -53,39 +65,37 @@ class nushappenings extends React.Component {
     }
 
     
-    displayData = (happeningsArray) => {
+    displayData = (happeningsArray, searchKeywords) => {
         if (!happeningsArray.length) return null; // if no information in happenings
 
-        return happeningsArray.map((event, index) => (
+        const filteredPosts = happeningsArray.filter(item => item.message_content.toLowerCase().includes(searchKeywords))
+        return filteredPosts.map((event, index) => (
             <div className='event' key={index}>
                 <p className='event-message-content'>{event.message_content}</p>
-                <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>More Info</a>
+                <a class="waves-effect waves-light btn" href={event.message_link} target='blank'><i class="material-icons left">cloud</i>More Info</a>
                 <p className='event-message-date'>{event.message_date}</p>
             </div>
         ));
     };
 
-    loadMore = () => {
-        this.setState(prevState => ({
-            page: prevState.page + 1,
-            scrolling: true,
-            loading: true
-        }), this.getData())
+    onChange = (e) => {
+        this.setState({search: e.target.value});
     }
 
     render() {
         console.log('State: ', this.state);
-
+        
         return (
 
         <div>
-            <input type='text'></input>
+            <input type='text' onChange={this.onChange}>
+            </input>
             <div className='data'>
-                {this.displayData(this.state.posts)}
+                {this.displayData(this.state.posts, this.state.search)}
             </div>
 
             <div className='loading-spinner'>
-                <BeatLoader size={24} color='#7395AE' loading/>
+                {this.state.loading ? <BeatLoader size={24} color='#7395AE'/> : 'End of Feed'}
             </div>
         </div>
         );

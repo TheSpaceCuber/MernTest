@@ -1,19 +1,27 @@
-import React from 'react';
-import background from "../Images/food.jpg";
+import React, { useState } from 'react';
+import useFoodSearch from './FoodSearch.js';
 
-export const Food = () => (
-    <div>
-        <div className="foodClass" style={{backgroundImage: `url(${background})`,height:"910px", width:"2000px"}}>
-        <div style={{ height: "75vh"}} className="container valign-wrapper">
-        <div className="row">
-          <div className="OneNUS name" style={{color: "white", textAlign:"center"}}>
-            <h1>
-              <b>Coming Soon</b>
-            </h1>
-            </div>
-            </div>
-            </div>
-        </div>
-        
-    </div>
-)
+
+export default function Food() {
+    const [query, setQuery] = useState('')
+    const [pageNumber, setPageNumber] = useState(1)
+
+    function handleSearch(e) {
+        setQuery(e.target.value)
+        setPageNumber(1)
+    }
+
+    useFoodSearch(query, pageNumber)
+    return (
+        <>
+            <input type='text' onChange={handleSearch}></input>
+            <div>Title</div>
+            <div>Title</div>
+            <div>Title</div>
+            <div>Title</div>
+            <div>Loading...</div>
+            <div>Error</div>
+        </>
+    )
+}
+
