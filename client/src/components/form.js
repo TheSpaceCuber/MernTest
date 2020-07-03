@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 
-class Home extends Component {
+class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,6 +30,24 @@ class Home extends Component {
     onTextboxChangeSignInEmail(event) {
         this.setState({
             signInEmail: event.target.value,
+        });
+    }
+
+    onTextboxChangeSignInPassword(event) {
+        this.setState({
+            signInPassword: event.target.value,
+        });
+    }
+
+    onTextboxChangeSignUpEmail(event) {
+        this.setState({
+            signUpEmail: event.target.value,
+        });
+    }
+
+    onTextboxChangeSignUpPassword(event) {
+        this.setState({
+            signUpPassword: event.target.value,
         });
     }
 
@@ -139,3 +157,5 @@ class Home extends Component {
     }
 
 }
+
+export default Form;

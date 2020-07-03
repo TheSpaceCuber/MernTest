@@ -41,7 +41,7 @@ export const Navbar = () => (
                     </li>
 
                     <li className="navbar-nav-items-non-button">
-                        <Link to="/profile">MY PROFILE</Link>
+                        <Link to="/form">LOGIN / REGISTER</Link>
                     </li>
 {/* 
                     <li className="navbar-nav-items-non-button">

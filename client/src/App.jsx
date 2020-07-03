@@ -9,8 +9,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 
 import Landing from "./components/Landing";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
+import Form from "./components/form"
 
 class App extends Component {
     render() {
@@ -23,9 +22,7 @@ class App extends Component {
                     <Route exact path="/about" component={About} />
                     <Route path="/nushappenings" component={nushappenings} />
                     <Route path="/food" component={Food} />
-                    <Route path="/profile" component={Profile} />
-                    <Route exact path="/register" component={Register} />
-                    <Route exact path="/login" component={Login} />
+                    <Route path="/form" component={Form} />
                 </Router>
             </div>
         );
