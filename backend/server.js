@@ -47,7 +47,6 @@ mongoose.connect(db,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAn
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
-require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
