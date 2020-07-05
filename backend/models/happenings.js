@@ -6,6 +6,7 @@ var happeningsSchema = new Schema ({
     message_id: Number,
     message_link: String,
     message_date: String,
+    message_content: String,
     message_day: Number,
     message_month: Number,
     message_year: Number

@@ -10,11 +10,11 @@ class nushappenings extends React.Component {
         page: 1,
         limit: 25,
         posts: [],
-        scrolling: false,
+        scrolling: null,
         totalPages: null,
         loading: true,
         hasMore: true,
-        search: ''
+        search: ""
     };
     
     componentDidMount = () => {
@@ -46,30 +46,29 @@ class nushappenings extends React.Component {
 
 
     getData = () => {
-        axios.get(`/happenings/?page=${this.state.page}&limit=${this.state.limit}/`)
-            .then(response => {
+        axios.get(`/happenings/?search=${this.state.search}&page=${this.state.page}&limit=${this.state.limit}/`)
+        .then(response => {
                 const data = response.data;
                 this.setState({
                     posts: this.state.posts.concat(data.happenings),
                     scrolling: false,
-                    totalPages: JSON.total_pages,
+                    totalPages: data.total_pages,
                     loading: false,
                     hasMore: data.hasMore
                 });
                 console.log('Data retrieved into React.');
-            })
+            }) 
             .catch(() => {
                 console.log('Error retrieving data into React.');
                 alert('Error retrieving data into React');
-            });
+            })
     }
 
     
-    displayData = (happeningsArray, searchKeywords) => {
+    displayData = (happeningsArray)=> {
         if (!happeningsArray.length) return null; // if no information in happenings
 
-        const filteredPosts = happeningsArray.filter(item => item.message_content.toLowerCase().includes(searchKeywords))
-        return filteredPosts.map((event, index) => (
+        return happeningsArray.map((event, index) => (
             <div className='event' key={index}>
                 <p className='event-message-content'>{event.message_content}</p>
                 <a class="waves-effect waves-light btn" href={event.message_link} target='blank'><i class="material-icons left">cloud</i>More Info</a>
@@ -78,20 +77,26 @@ class nushappenings extends React.Component {
         ));
     };
 
-    onChange = (e) => {
-        this.setState({search: e.target.value});
+    handleSearch = (e) => {
+        this.setState({
+            search: e.target.value,
+            page: 1,
+            posts:[]
+        });
+        this.getData();
     }
 
     render() {
         console.log('State: ', this.state);
-        
+
         return (
 
         <div>
-            <input type='text' onChange={this.onChange}>
+            <input type='text' onChange={this.handleSearch}>
             </input>
+            
             <div className='data'>
-                {this.displayData(this.state.posts, this.state.search)}
+                {this.displayData(this.state.posts)}
             </div>
 
             <div className='loading-spinner'>
