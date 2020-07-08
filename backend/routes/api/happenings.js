@@ -6,7 +6,7 @@ let happeningsSchema = require("../../models/happenings");
 
 happeningsRoutes.route('/').get(function(req, res) {
     
-    happeningsSchema.find({}, {_id:1, channel_name:1, message_link:1, message_date:1, message_content:1}, 
+    happeningsSchema.find({}, {_id:1, channel_name:1, message_link:1, message_date:1, 'message_content':1}, 
         function (err, happenings) {
         if (err) {
             console.log(err)
@@ -14,9 +14,8 @@ happeningsRoutes.route('/').get(function(req, res) {
             const page = parseInt(req.query.page)
             const limit = parseInt(req.query.limit)
             const search = req.query.search
-            console.log(search)
             const filteredHappenings = happenings.filter(
-                content => content.message_content.toLowerCase().includes(search))
+                content => content.message_content.toLowerCase().includes(search.toLowerCase()))
             const total_pages = Math.ceil(filteredHappenings.length / limit)
 
             const startIndex = (page - 1) * limit
@@ -37,4 +36,3 @@ happeningsRoutes.route('/').get(function(req, res) {
 });
 
 module.exports = happeningsRoutes;
-  

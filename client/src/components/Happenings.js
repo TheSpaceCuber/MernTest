@@ -35,7 +35,7 @@ export default function Happenings() {
 
     return (
         <>
-            <input type='text' value={query} onChange={handleSearch}></input>
+            <input type='text' onChange={handleSearch}></input>
             <div className='data'>
             {posts.map((post, index) => {
                 if (posts.length == index + 1) {
