@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function useFoodSearch(query, pageNumber, limit) {
+export default function useHappeningsSearch(query, pageNumber, limit) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     const [posts, setPosts] = useState([])
     const [hasMore, setHasMore] = useState(false)
+
+    useEffect(() => {
+        setPosts([])
+    }, [query])
 
     useEffect(() => {
         setLoading(true)

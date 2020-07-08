@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import nushappenings from "./components/NUShappenings.js";
+import Happenings from "./components/Happenings.js";
 import  Food  from "./components/Food.js";
 import { Profile } from "./components/MyProfile.js";
 import { About } from "./components/About.js";
@@ -20,7 +20,7 @@ class App extends Component {
                     <div style={{ marginTop: '63px' }}></div>
                     <Route exact path="/" component={Landing} />
                     <Route exact path="/about" component={About} />
-                    <Route path="/nushappenings" component={nushappenings} />
+                    <Route path="/nushappenings" component={Happenings} />
                     <Route path="/food" component={Food} />
                     <Route path="/form" component={Form} />
                 </Router>
