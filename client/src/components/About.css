@@ -1,18 +1,19 @@
 .about-banner img {
     width: 100%;
-    display: block;
     position: relative;
-    filter: brightness(125%);
+    filter: brightness(40%);
+    display: flex;
 }
 
 .about-banner h1 {
     position: absolute;
-    top: 210px;
     color: white;
-    width: 100%;
-    text-align: center;
     font-family: "Basement-Medium";
     font-size: 125px;
+    top: 235px;
+    width: 100%;
+    text-align: center;
+    padding: 0 0;
 }
 
 .about-banner p {
@@ -88,3 +89,4 @@
 .about-list li {
     font-size: 16px;
 }
+

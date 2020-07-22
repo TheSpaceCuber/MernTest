@@ -1,16 +1,12 @@
-.data {
-    margin-top: 100px;
-    margin-left: 150px;
-    margin-right: 150px;
-}
-
 .event{
     margin: 25px 0;
-    padding: 0px 20px;
+    padding: 5px 25px;
     border-style: solid;
     border-radius: 20px;
-    border-color: #7395AE;
+    border-color: #90a4ae;
+    white-space: pre-wrap;
 }
+
 
 .event-message-link {
     color: white;
@@ -18,18 +14,72 @@
 }
 
 .event-message-content{
-    padding: 0
+    padding: 0;
 }
 
-.event-message-date{
-    padding: 0
+
+.event-message-date {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.event-message-date i {
+    padding-top: 10px;
+    padding-right: 5px;
 }
 
 .loading-spinner {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding-bottom: 50px;
-    padding-top: 25px
+    padding-top: 100px
+}
+
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    margin: 0 370px;
+    padding-right: 10px;
+}
+
+.searchbar-icon {
+    align-items: center;
+    margin: 2px 10px;
+    padding-top: 10px;
+}
+
+.searchbar-textinput {
+    width: 100%;
+}
+
+.intro {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.btn-floating {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #ffb74d;
+    box-shadow: none;
+}
+
+
+.btn-floating:hover  {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+.btn-floating:active,
+.btn-floating:hover  {
+    background-color: #ffa726;
 }

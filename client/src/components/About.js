@@ -1,6 +1,6 @@
 import React from 'react';
 import "./About.css";
-import banner from "../Images/yalenus.jpg";
+import banner from "../Images/NUS.png";
 import motivation_picture from "../Images/code.png";
 import who_picture from "../Images/student (1).png";
 import user_stories_picture from "../Images/target.png";
@@ -8,6 +8,10 @@ import {Button} from './Button.js';
 
 export const About = () => (
     <header className="about-page">
+        <div className="about-banner">
+            <img src={banner}/>
+            <h1>OneNUS</h1>
+        </div>
 
         <div className="about-who-are-we">
             <img src ={who_picture}/>

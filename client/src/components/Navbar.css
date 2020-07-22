@@ -17,9 +17,9 @@
 }
 
 .navbar-nav-logo {
-    padding-top: 20px;
-    padding-left: 30px;
-    transition: 0.6s;
+    padding-top: 22px;
+    padding-left: 5px;
+    align-items: center;
 }
     
 .navbar-nav-logotext {
@@ -29,9 +29,8 @@
     font-weight: bold;
     font-family: "Basement-Medium";
     font-size: 30px;
-    left: 42%;
     padding-top: 5px;
-    transition: 0.6s;
+    padding-left: 35px;
 }
 
 .spacer {

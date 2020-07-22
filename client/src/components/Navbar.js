@@ -11,13 +11,12 @@ import {
 
 export const Navbar = () => (
     <header className="navbar">
-        <nav className="blue navbar-nav">
-
-            <Link className="navbar-nav-logo" to ="/">
-            <img src={logo} width="40" height="40"></img>
-            </Link>
+        <nav className="#039be5 light-blue darken-3 navbar-nav">
 
             <Link className="navbar-nav-logotext" to="/">OneNUS</Link>
+            <Link className="navbar-nav-logo" to ="/">
+            <img src={logo} width="35" height="35"></img>
+            </Link>
 
             <div className="spacer"/>
 
