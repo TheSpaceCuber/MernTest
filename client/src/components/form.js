@@ -1,161 +1,170 @@
-import React, { Component } from 'react';
-import 'whatwg-fetch';
+import React, { useState } from 'react';
+import UserPool from '../UserPool';
+import { CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
 
-class Form extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoading: true,
-            token: '',
-            signUpError: '',
-            signInError: '',
-            signInEmail: '',
-            signInPassword: '',
-            signUpEmail: '',
-            signUpPassword: '',
-        };
+function Form() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [emailRegister, setEmailRegister] = useState('');
+    const [passwordRegister, setPasswordRegister] = useState('');
+    
+    const onSubmitSignUp = event => {
+        event.preventDefault();
 
-        this.onTextboxChangeSignInEmail = this.onTextboxChangeSignInEmail.bind(this);
-        this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(this);
-        this.onTextboxChangeSignUpEmail = this.onTextboxChangeSignUpEmail.bind(this);
-        this.onTextboxChangeSignUpPassword = this.onTextboxChangeSignUpPassword.bind(this);
-        this.onSignUp = this.onSignUp.bind(this);
-    }
+        UserPool.signUp(email, password, [], null, (err, data) => {
+            if (err) {
+                console.log(err);
+                alert(err + "UserPool sign up error");
+            }
+            console.log(data)
+            alert(data)
+        })
+    };
 
-    componentDidMount() {
-        this.setState({
-            isLoading: false
+    const onSubmitLogin = event => {
+        event.preventDefault();
+
+        const user = new CognitoUser({
+            Username: email,
+            Pool: UserPool
         });
-    }
-    onTextboxChangeSignInEmail(event) {
-        this.setState({
-            signInEmail: event.target.value,
-        });
-    }
 
-    onTextboxChangeSignInPassword(event) {
-        this.setState({
-            signInPassword: event.target.value,
+        const authDetails = new AuthenticationDetails({
+            Username: email,
+            Password: password
         });
-    }
 
-    onTextboxChangeSignUpEmail(event) {
-        this.setState({
-            signUpEmail: event.target.value,
-        });
-    }
-
-    onTextboxChangeSignUpPassword(event) {
-        this.setState({
-            signUpPassword: event.target.value,
-        });
-    }
-
-    onSignUp() {
-        // Grab state
-        const {
-            signUpEmail,
-            signUpPassword,
-        } = this.state; this.setState({
-            isLoading: true,
-        });    // Post request to backend
-        fetch('/api/account/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
+        user.authenticateUser(authDetails, {
+            onSuccess: data => {
+                console.log('onSuccess: ', data);
+                alert('success')
             },
-            body: JSON.stringify({
-                email: signUpEmail,
-                password: signUpPassword,
-            }),
-        }).then(res => res.json())
-            .then(json => {
-                console.log('json', json);
-                if (json.success) {
-                    this.setState({
-                        signUpError: json.message,
-                        isLoading: false,
-                        signUpEmail: '',
-                        signUpPassword: '',
-                    });
-                } else {
-                    this.setState({
-                        signUpError: json.message,
-                        isLoading: false,
-                    });
-                }
-            });
-    }
 
-    render() {
-        const {
-            isLoading,
-            token,
-            signInError,
-            signInEmail,
-            signInPassword,
-            signUpEmail,
-            signUpPassword,
-            signUpError,
-        } = this.state; if (isLoading) {
-            return (<div><p>Loading...</p></div>);
-        } if (!token) {
-            return (
-                <div>
-                    <div>
-                        {
-                            (signInError) ? (
-                                <p>{signInError}</p>
-                            ) : (null)
-                        }
-                        <p>Sign In</p>
-                        <input
-                            type="email"
-                            placeholder="Email"
-                            value={signInEmail}
-                            onChange={this.onTextboxChangeSignInEmail}
-                        />
-                        <br />
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            value={signInPassword}
-                            onChange={this.onTextboxChangeSignInPassword}
-                        />
-                        <br />
-                        <button>Sign In</button>
+            onFailure: err => {
+                console.log('onFailure: ', err);
+                alert('Failed to authenticate');
+            },
+
+            newPasswordRequired: data => {
+                console.log('newPasswordRequired: ', data);
+                alert('newPasswordRequired')
+            }
+        });
+    };
+
+    return (
+        <div className="container">
+            <div style={{ marginTop: "4rem" }} className="row">
+                <div className="col s8 offset-s2">
+                    <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                        <h4>
+                            <b>Login</b> here
+                        </h4>
                     </div>
-                    <br />
-                    <br />
-                    <div>
-                        {
-                            (signUpError) ? (
-                                <p>{signUpError}</p>
-                            ) : (null)
-                        }
-                        <p>Sign Up</p>
-                        <input
-                            type="email"
-                            placeholder="Email"
-                            value={signUpEmail}
-                            onChange={this.onTextboxChangeSignUpEmail}
-                        /><br />
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            value={signUpPassword}
-                            onChange={this.onTextboxChangeSignUpPassword}
-                        /><br />
-                        <button onClick={this.onSignUp}>Sign Up</button>
-                    </div>       </div>
-            );
-        } return (
-            <div>
-                <p>Signed in</p>
-            </div>
-        );
-    }
+                    <form onSubmit={onSubmitLogin}>
+                        <div className="input-field col s12">
+                            <input placeholder="Email" type="text"
+                                value={email}
+                                onChange={event => setEmail(event.target.value)}
+                            />
+                        </div>
+                        <div className="input-field col s12">
+                            <input placeholder="Password" type="text" //change type to password to use dots instead of text
+                                value={password}
+                                onChange={event => setPassword(event.target.value)}
+                            />
+                        </div>
+                        <div className="col s12" style={{ textAlign: "center" }}>
+                            <button
+                                style={{
+                                    width: "150px",
+                                    borderRadius: "3px",
+                                    letterSpacing: "1.5px",
+                                    marginTop: "1rem"
+                                }}
+                                type="submit"
+                                className="btn btn-large waves-effect waves-light hoverable blue accent-3">
+                            Login
+                            </button>
+                        </div>
+                    </form>
 
+
+
+
+
+
+
+
+                    <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <h4>
+              <b>Register</b> here
+            </h4>
+
+          </div>
+          <form onSubmit={onSubmitSignUp}>
+            <div className="input-field col s12">
+              <input placeholder="Email"
+                value={emailRegister}
+                onChange={event => setEmailRegister(event.target.value)}
+              />
+            </div>
+            <div className="input-field col s12">
+              <input placeholder="Password" type="text" //change type to password to use dots instead of text
+                value={passwordRegister}
+                onChange={event => setPasswordRegister(event.target.value)}
+              />
+            </div>
+            <div className="col s12" style={{ textAlign: "center" }}>
+              <button
+                style={{
+                  width: "150px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px",
+                  marginTop: "1rem"
+                }}
+                type="submit"
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+                </div>
+            </div>
+        </div>
+    );
+
+    /*
+    return (
+      <div>
+        <form onSubmit = { onSubmit }>
+          <input
+            value={email}
+            onChange={event => setEmail(event.target.value)}
+          />
+          <div className="input-field col s12">
+          <input
+            value={password}
+            onChange={event => setPassword(event.target.value)}
+          />
+          </div>
+          
+  
+          <button style={{
+                      width: "150px",
+                      borderRadius: "3px",
+                      letterSpacing: "1.5px",
+                      marginTop: "1rem",
+                      textAlign: "center"
+                    }}
+                    type="submit"
+                    className="btn-large waves-effect waves-light hoverable blue accent-3">Login</button>
+        </form>
+      </div>
+    );
+  
+  */
 }
 
 export default Form;

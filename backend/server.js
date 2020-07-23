@@ -11,8 +11,6 @@ const cors = require('cors');
 // The path module provides utilities for working with file and directory paths.
 const path = require('path'); 
 
-const passport = require("passport");
-const users = require("./routes/api/users");
 const happeningsRoutes = require("./routes/api/happenings");
 
 const app = express();
@@ -45,11 +43,9 @@ mongoose.connect(db,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAn
 // const users = require('/api/users');
 // app.use('/api/users', users);
 // Passport middleware
-app.use(passport.initialize());
 // Passport config
 
 // Routes
-app.use("/api/users", users);
 app.use("/happenings", happeningsRoutes);
 
 // ===================API========================
