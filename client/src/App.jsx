@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Happenings from "./components/Happenings.js";
 import  Food  from "./components/Food.js";
 import { Profile } from "./components/MyProfile.js";
-import { About } from "./components/About.js";
+import { Home } from "./components/Home.js";
 import './App.css';
 import Navbar from "./components/Navbar";
 
@@ -19,8 +19,7 @@ class App extends Component {
                 <Router>
                     <Navbar />
                     <div style={{ marginTop: '63px' }}></div>
-                    <Route exact path="/" component={Landing} />
-                    <Route exact path="/about" component={About} />
+                    <Route exact path="/" component={Home} />
                     <Route path="/nushappenings" component={Happenings} />
                     <Route path="/food" component={Food} />
                     <Route path="/form" component={Form} />

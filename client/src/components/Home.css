@@ -1,29 +1,25 @@
-.about-banner img {
-    width: 100%;
-    position: relative;
-    filter: brightness(40%);
-    display: flex;
+.LandingClass {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    backdrop-filter: brightness(40%);
 }
 
-.about-banner h1 {
-    position: absolute;
-    color: white;
+.banner-words h1{
     font-family: "Basement-Medium";
-    font-size: 125px;
-    top: 235px;
-    width: 100%;
-    text-align: center;
-    padding: 0 0;
+    font-size: 110px;
+    padding-left: 20px;
+    justify-content: center;
+    margin: 5px 0px;
 }
 
-.about-banner p {
-    position: absolute;
-    top: 400px;
-    color: white;
-    width: 100%;
-    left: 36.9%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 24px;
+.banner-words p{
+    font-size: 20px;
+    padding-left: 7px;
+    margin:0;
+}
+
+.banner-words {
+    padding-bottom: 90px;
 }
  
 .about-who-are-we {

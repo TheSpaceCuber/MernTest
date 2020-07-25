@@ -82,7 +82,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    background-color: #ffb74d;
+    background-color: #ffa726;
     box-shadow: none;
 }
 
@@ -94,7 +94,7 @@
 
 .btn-floating:active,
 .btn-floating:hover  {
-    background-color: #ffa726;
+    background-color: #ffb74d;
 }
 
 .progress {

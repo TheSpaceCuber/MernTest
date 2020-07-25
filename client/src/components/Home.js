@@ -1,18 +1,56 @@
 import React from 'react';
-import "./About.css";
+import "./Home.css";
 import banner from "../Images/NUS.png";
 import motivation_picture from "../Images/code.png";
 import who_picture from "../Images/student (1).png";
 import user_stories_picture from "../Images/target.png";
-import {Button} from './Button.js';
+import { Link } from "react-router-dom";
 
-export const About = () => (
-    <header className="about-page">
-        <div className="about-banner">
-            <img src={banner}/>
-            <h1>OneNUS</h1>
+export const Home = () => (
+    <>
+    <div className="LandingClass" style={{backgroundImage: `url(${banner})`, height:"460px"}}>
+      <div style={{ height: "500px"}} className="container valign-wrapper">
+        <div className="row">
+          <div className="banner-words" style={{color: "white", textAlign:"center"}}>
+            <h1>
+              <b>OneNUS</b>
+            </h1>
+            <p className="flow-text white-text text-darken-1">
+              Hassle free updates, at your fingertips. 
+            </p>
+            <br />
+            <div className="col s6">
+              <Link
+                to="/nushappenings"
+                style={{
+                  width: "160px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="btn btn-large waves-effect waves-light hoverable orange lighten-1"
+              >
+                Happenings
+              </Link>
+            </div>
+            <div className="col s6">
+              <Link
+                to="/food"
+                style={{
+                  width: "160px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="btn btn-large waves-effect waves-light hoverable orange lighten-1"
+              >
+                Food
+              </Link>
+            </div>
+          </div>
+          
         </div>
-
+        </div>
+      </div>
+        
         <div className="about-who-are-we">
             <img src ={who_picture}/>
             <div className="about-text">
@@ -43,13 +81,5 @@ export const About = () => (
                     </ol>
             </div>
         </div>
-    </header>
-)
-
-/*
-<div className="about-banner">
-            <img src={banner}/>
-            <h1>OneNUS</h1>
-            <p>Hassle-free updates, at your fingertips.</p>
-        </div>
-*/
+    </>
+);

@@ -28,7 +28,7 @@ export const Navbar = () => (
                     </li>
 
                     <li className="navbar-nav-items-non-button">
-                        <Link to="/about">ABOUT US</Link>
+                        <Link to="/">HOME</Link>
                     </li>
 
                     <li className="navbar-nav-items-non-button">

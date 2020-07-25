@@ -40,7 +40,7 @@ export default function Happenings() {
     return (
         <>
             <div className='intro'>
-                <h5>Discover all <strong style={{ color:'#ffa500' }}>EVENTS</strong> happenings around NUS.</h5>
+                <h5>Discover all <strong style={{ color:'#ffa726' }}>EVENTS</strong> happenings around NUS.</h5>
                 <p>Enter an event keyword to narrow your search!</p>
             </div>
             <div className='searchbar'>
@@ -93,7 +93,7 @@ export default function Happenings() {
                                 <p className='event-message-content'>{content}</p>
                             
                             <div className='event-message-link'>
-                            <a className="btn waves-effect waves-light btn orange lighten-2" href={post.message_link} target='blank'><i className="material-icons left">cloud</i>More Info</a>
+                            <a className="btn waves-effect waves-light btn orange lighten-1" href={post.message_link} target='blank'><i className="material-icons left">cloud</i>More Info</a>
                             </div>
                             </div>
                         </div>
