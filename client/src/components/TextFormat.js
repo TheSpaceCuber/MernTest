@@ -9,7 +9,7 @@ const FormatText = () => {
             </span>
         )
     })
-    return <p>formattedText</p>
+    return <p>{formattedText}</p>
 };
 
 export default FormatText;

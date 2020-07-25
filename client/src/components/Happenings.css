@@ -1,16 +1,28 @@
-.event{
-    margin: 25px 0;
+.card{
+    margin: 25px 100px;
     padding: 5px 25px;
-    border-style: solid;
     border-radius: 20px;
-    border-color: #90a4ae;
     white-space: pre-wrap;
 }
 
+.card-top{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+}
 
+
+.channelname {
+    color: #01579b;
+}
 .event-message-link {
     color: white;
     text-decoration: none;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    
 }
 
 .event-message-content{
@@ -19,14 +31,15 @@
 
 
 .event-message-date {
-    margin-top: 5px;
+    margin-top: 4px;
     display: flex;
     flex-direction: row;
     text-align: center;
+    color: #696969;
 }
 
 .event-message-date i {
-    padding-top: 10px;
+    padding-top: 4px;
     padding-right: 5px;
 }
 
@@ -82,4 +95,8 @@
 .btn-floating:active,
 .btn-floating:hover  {
     background-color: #ffa726;
+}
+
+.progress {
+    width: 400px;
 }
