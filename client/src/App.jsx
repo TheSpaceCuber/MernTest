@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 
 import Landing from "./components/Landing";
 import Form from "./components/form"
+import Login from "./components/login"
 
 class App extends Component {
     render() {
@@ -23,6 +24,7 @@ class App extends Component {
                     <Route path="/nushappenings" component={Happenings} />
                     <Route path="/food" component={Food} />
                     <Route path="/form" component={Form} />
+                    <Route path="/login" component={Login} />
                 </Router>
             </div>
         );

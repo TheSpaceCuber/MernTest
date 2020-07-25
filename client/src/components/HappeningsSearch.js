@@ -10,7 +10,7 @@ export default function useHappeningsSearch(query, pageNumber, limit) {
     useEffect(() => {
         setPosts([])
     }, [query])
-
+    
     useEffect(() => {
         setLoading(true)
         setError(false)

@@ -40,7 +40,11 @@ export const Navbar = () => (
                     </li>
 
                     <li className="navbar-nav-items-non-button">
-                        <Link to="/form">LOGIN / REGISTER</Link>
+                        <Link to="/form">REGISTER</Link>
+                    </li>
+
+                    <li className="navbar-nav-items-non-button">
+                        <Link to="/login">LOGIN</Link>
                     </li>
 {/* 
                     <li className="navbar-nav-items-non-button">

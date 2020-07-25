@@ -1,33 +1,52 @@
 import React, { useState } from 'react';
 import UserPool from '../UserPool';
+import { CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
 
-function Signup() {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const onSubmit = event => {
     event.preventDefault();
 
-    UserPool.signUp(email, password, [], null, (err, data) => {
-      if (err) console.log(err);
-      console.log(data)
-    })
+    const user = new CognitoUser({
+      Username: email,
+      Pool: UserPool
+    });
+
+    const authDetails = new AuthenticationDetails({
+      Username: email,
+      Password: password
+    });
+
+    user.authenticateUser(authDetails, {
+      onSuccess: data => {
+        console.log('onSuccess: ', data);
+      },
+
+      onFailure: err => {
+        console.log('onFailure: ', err);
+      },
+
+      newPasswordRequired: data => {
+        console.log('newPasswordRequired: ', data);
+      }
+    });
   };
 
   return (
-
     <div className="container">
       <div style={{ marginTop: "4rem" }} className="row">
         <div className="col s8 offset-s2">
           <div className="col s12" style={{ paddingLeft: "11.250px" }}>
             <h4>
-              <b>Register</b> here
+              <b>Login</b> here
             </h4>
 
           </div>
           <form onSubmit={onSubmit}>
             <div className="input-field col s12">
-              <input placeholder="Email"
+              <input placeholder="Email" type="text" 
                 value={email}
                 onChange={event => setEmail(event.target.value)}
               />
@@ -49,39 +68,45 @@ function Signup() {
                 type="submit"
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
               >
-                Register
+                Login
               </button>
             </div>
           </form>
         </div>
       </div>
     </div>
-
   );
-}
 
-/*
-<div>
+  /*
+  return (
+    <div>
       <form onSubmit = { onSubmit }>
         <input
           value={email}
           onChange={event => setEmail(event.target.value)}
         />
-
+        <div className="input-field col s12">
         <input
           value={password}
           onChange={event => setPassword(event.target.value)}
         />
+        </div>
+        
 
         <button style={{
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
-                    marginTop: "1rem"
+                    marginTop: "1rem",
+                    textAlign: "center"
                   }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3">Signup</button>
+                  className="btn-large waves-effect waves-light hoverable blue accent-3">Login</button>
       </form>
     </div>
+  );
+
 */
-export default Signup;
+}
+
+export default Login;
