@@ -9,7 +9,11 @@ function Signup() {
     event.preventDefault();
 
     UserPool.signUp(email, password, [], null, (err, data) => {
-      if (err) console.log(err);
+      if (err) {
+        alert('Error signing up: ', err)
+        console.log(err)
+      };
+      alert('Okay! ', data)
       console.log(data)
     })
   };
