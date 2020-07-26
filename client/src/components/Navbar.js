@@ -36,10 +36,6 @@ export const Navbar = () => (
                     </li>
 
                     <li className="navbar-nav-items-non-button">
-                        <Link to="/food">FOOD</Link>
-                    </li>
-
-                    <li className="navbar-nav-items-non-button">
                         <Link to="/form">REGISTER</Link>
                     </li>
 

@@ -45,7 +45,7 @@ export default function Happenings() {
             </div>
             <div className='searchbar'>
                 <div className='searchbar-icon'>
-                <i className="small material-icons light-blue-text text-darken-3">search</i> 
+                <i className="small material-icons teal-text text-darken-1">search</i> 
                 </div>
                 <div className='searchbar-textinput'>
                 <input type="search" placeholder="Search" onChange={handleSearch}></input>
@@ -71,7 +71,7 @@ export default function Happenings() {
                                 <p className='event-message-content'>{content}</p>
                             
                             <div className='event-message-link'>
-                            <a className="btn waves-effect waves-light btn orange lighten-2" href={post.message_link} target='blank'><i className="material-icons left">cloud</i>More Info</a>
+                            <a className="btn waves-effect waves-light btn orange lighten-1" href={post.message_link} target='blank'><i className="material-icons left">cloud</i>More Info</a>
                             </div>
                             </div>
                         </div>
