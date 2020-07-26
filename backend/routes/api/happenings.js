@@ -15,7 +15,9 @@ happeningsRoutes.route('/').get(function(req, res) {
             const limit = parseInt(req.query.limit)
             const search = req.query.search
             const filteredHappenings = happenings.filter(
-                content => content.message_content.toLowerCase().includes(search.toLowerCase()))
+                content => content.message_content.toLowerCase().includes(search.toLowerCase())
+                || content.channel_name.toLowerCase().includes(search.toLowerCase())
+                )
             const total_pages = Math.ceil(filteredHappenings.length / limit)
 
             const startIndex = (page - 1) * limit

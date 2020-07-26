@@ -2,6 +2,7 @@
   - [Orbital 2020](https://orbital.comp.nus.edu.sg/)
   - Platform for all the NUS events you need.
   - [Tien Chun](https://github.com/tien87chun) & [Royce](https://github.com/TheSpaceCuber)
+  - Update (July 15th): It seems like NUS is planning a mobile app called OneNUS with the same objective!
 
 ## Motivation
 As a NUS student, do you often find that there are too many decentralised information channels? We certainly think so. Because different NUS organisations use various decentralised communication channels – such as email lists, NUSync, Telegram channels, and NUS TalentConnect – we often find it difficult to find the information we are interested in. 
@@ -38,14 +39,16 @@ Currently, we will focus on a single platform, Telegram, first.
 2. Evaluation Milestone 2 – Prototyping
       - Work on application UI using ReactJS (implement multiple features in the frontend) locally ✓
       - Connecting the implementation of features to the backend database
-         - Sign-up & Login feature [Delayed for Milestone 3]
-         - Search bar feature [Delayed for Milestone 3]
-      - Display the data obtained in a user-friendly way (Not fully completed). ✓
-      - ![Happenings](https://user-images.githubusercontent.com/43946966/86004019-3d2b9e80-ba45-11ea-9cbf-90f8be3af22f.gif)
+         - Sign-up & Login feature ~~[Delayed for Milestone 3]~~ ✓ basic feature without state
+         - Search bar feature ~~[Delayed for Milestone 3]~~ ✓
+          ![ezgif-2-1da455c83377](https://user-images.githubusercontent.com/43946966/88476630-771c9180-cf6c-11ea-8aa7-9959c49b9251.gif)
+
+      - Display the data obtained in a user-friendly way ~~(Not fully completed)~~. ✓
+      - ![ezgif-2-6ec9af63da19](https://user-images.githubusercontent.com/43946966/88476537-ada5dc80-cf6b-11ea-8015-3f597c8fc05c.gif)
 
 3.	Evaluation Milestone 3 – Extension
-      - Incorporate the storage and display of media files (images and videos) into database and web application [To be confirmed]
-      - Extension of features in the web application to cover more categories (NUSync, NUSNextBus) [To be confirmed]
+      - ~~Incorporate the storage and display of media files (images and videos) into database and web application [To be confirmed]~~
+      - ~~Extension of features in the web application to cover more categories (NUSync, NUSNextBus) [To be confirmed]~~
  
 4.	Splashdown
 
@@ -63,3 +66,5 @@ We are the first web application on the university campus and in the university 
 3. Database (MongoDB Atlas): Atlas makes the NoSQL database convenient and we wanted to learn how NoSQL works compared to relational databases. The popularity of MongoDB makes it a great choice.
 
 4. Webscrape: In order to obtain our data, we use Python due to its ease it web scraping. The telethon library is used for obtaining telegram data, and we plan to look into scrapy and bs4 if we have the time to scrape websites.
+
+5. AWS Cognito (Authentication Backend): This helped us to abstract away the backend required to AWS. (NEW!)
