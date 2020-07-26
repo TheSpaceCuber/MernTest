@@ -21,17 +21,17 @@ function Login() {
 
         user.authenticateUser(authDetails, {
             onSuccess: data => {
-                alert('Login Successful!', data)
+                alert('Login Successful!')
                 console.log('onSuccess: ', data);
             },
 
             onFailure: err => {
-                alert('Error: ', err)
+                alert('Error: ' + err.message)
                 console.log('onFailure: ', err);
             },
 
             newPasswordRequired: data => {
-                alert('New Password required: ', data)
+                alert('New Password required: ' + data.message)
                 console.log('newPasswordRequired: ', data);
             }
         });
