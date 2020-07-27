@@ -26,9 +26,10 @@ export default function useHappeningsSearch(query, pageNumber, limit) {
             setHasMore(res.data.hasMore)
             setLoading(false)
         }).catch(e => {
+            /*
             if (axios.isCancel(e)) return
             else {
-            setError(true)
+            setError(true) */
             console.log('Error retrieving data into React.');
             alert('Error retrieving data into React');
             }

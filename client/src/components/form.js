@@ -11,7 +11,7 @@ function Signup() {
     UserPool.signUp(email, password, [], null, (err, data) => {
       if (err) {
         alert('Error signing up: ' + err.message)
-        console.log(err.message)
+        console.log(err)
       } else {
         alert('Sign up success!, '+ data.message)
         console.log(data)
